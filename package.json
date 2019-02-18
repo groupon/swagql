@@ -1,0 +1,72 @@
+{
+  "name": "swagql",
+  "version": "0.0.0",
+  "description": "Build a GraphQL schema from a given Swagger or Open API specification",
+  "license": "BSD-3-Clause",
+  "main": "lib/swagql.js",
+  "bin": "cli.js",
+  "homepage": "https://github.com/groupon/swagql",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/groupon/swagql"
+  },
+  "bugs": {
+    "url": "https://github.com/groupon/swagql/issues"
+  },
+  "scripts": {
+    "pretest": "eslint lib test",
+    "preinstall": "fgrep -ql package-lock.json .gitignore || npm -v | egrep -q '^6\\.'",
+    "test": "mocha",
+    "posttest": "nlm verify"
+  },
+  "engines": {
+    "yarn": "0.0.0"
+  },
+  "nlm": {
+    "license": {
+      "files": [
+        "lib"
+      ]
+    }
+  },
+  "dependencies": {
+    "@babel/parser": "^7.1.2",
+    "babel-core": "^6.26.3",
+    "babel-generator": "^6.26.1",
+    "babel-template": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "commander": "^2.17.1",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "js-yaml": "^3.12.0",
+    "lodash": "^4.17.10",
+    "mockery": "^2.1.0",
+    "swagger-parser": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.3",
+    "assertive": "^2.1.0",
+    "eslint": "^4.7.1",
+    "eslint-config-groupon": "^6.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^4.12.1",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-prettier": "^2.2.0",
+    "gofer": "^3.5.8",
+    "mocha": "^5.2.0",
+    "nlm": "^3.6.0",
+    "prettier": "^1.6.1"
+  },
+  "author": {
+    "name": "Groupon",
+    "email": "opensource@groupon.com"
+  },
+  "files": [
+    "*.js",
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}
