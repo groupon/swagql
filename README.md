@@ -38,6 +38,25 @@ graphql(schema, query, context)
   .then(result => console.log);
 ```
 
-Acknowledgements
-----------------
+## Pagination
+
+If given REST API response includes lists, we need to add page info and edge
+connection cursors to handle pagination in GraphQL.
+
+To handle this, the generated schema looks for `convertArrayToConnection` and
+`parseCursorOptions` function definitions in `./array-to-connection.js`. SwagQL
+provides a default implementation for array-to-connection. If your APIs return
+pagination information in the response, the default implementation can be used
+as follows:
+
+```js
+// array-to-connection.js
+module.exports = require('swagql/array-to-connection');
+```
+
+If your API responses handle pagination differently, you may have to customize
+array-to-connection implementation.
+
+## Acknowledgements
+
 `test/fixtures/petstore.json` is taken from https://petstore.swagger.io/v2/swagger.json
