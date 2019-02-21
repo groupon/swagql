@@ -1,3 +1,10 @@
+### 1.1.1
+
+* Add array connection tests and mention usage in docs - **[@saumitrab](https://github.com/saumitrab)** [#3](https://github.com/groupon/swagql/pull/3)
+  - [`66a809a`](https://github.com/groupon/swagql/commit/66a809aa4e369faf623414b6ffba62071f5bb8bc) **test:** add a test for array-to-connection
+  - [`fff5685`](https://github.com/groupon/swagql/commit/fff5685fbb205e753e6b201d16def8fcc4d76a33) **docs:** mention pagination details in README
+
+
 ### 1.1.0
 
 * feat: expose array-to-connections - **[@saumitrab](https://github.com/saumitrab)** [#2](https://github.com/groupon/swagql/pull/2)
