@@ -1,3 +1,9 @@
+### 1.1.2
+
+* add package keywords - **[@saumitrab](https://github.com/saumitrab)** [#4](https://github.com/groupon/swagql/pull/4)
+  - [`7ce0f51`](https://github.com/groupon/swagql/commit/7ce0f5136a7cefc67593a1a8e6c2952439bbf278) **docs:** add package keywords
+
+
 ### 1.1.1
 
 * Add array connection tests and mention usage in docs - **[@saumitrab](https://github.com/saumitrab)** [#3](https://github.com/groupon/swagql/pull/3)
