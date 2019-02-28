@@ -62,6 +62,11 @@
     "name": "Groupon",
     "email": "opensource@groupon.com"
   },
+  "keywords": [
+    "graphql",
+    "swagger",
+    "openapi"
+  ],
   "files": [
     "*.js",
     "lib"
