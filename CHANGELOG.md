@@ -1,3 +1,10 @@
+### 1.1.4
+
+* chore: remove silly preinstall check - **[@dbushong](https://github.com/dbushong)** [#7](https://github.com/groupon/swagql/pull/7)
+  - [`38bad34`](https://github.com/groupon/swagql/commit/38bad3474b367c2c58552418e9ee3e0aba8db7f6) **chore:** remove silly preinstall check
+  - [`bd5a616`](https://github.com/groupon/swagql/commit/bd5a616f4f43162f891dfc4c858dc12f9b5ab46f) **fix:** use Buffer.from() instead of new Buffer()
+
+
 ### 1.1.3
 
 * don't die on operationId: 'get' - **[@dbushong](https://github.com/dbushong)** [#6](https://github.com/groupon/swagql/pull/6)
