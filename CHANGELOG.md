@@ -1,3 +1,10 @@
+### 1.1.3
+
+* don't die on operationId: 'get' - **[@dbushong](https://github.com/dbushong)** [#6](https://github.com/groupon/swagql/pull/6)
+  - [`3cadd1d`](https://github.com/groupon/swagql/commit/3cadd1d8d1a53dd0ffff804f54a2ceaa4724c30f) **chore:** npm audit fix
+  - [`10e9335`](https://github.com/groupon/swagql/commit/10e9335d55adf828045aa59af2a56f267e8c2283) **fix:** don't die on operationId: 'get'
+
+
 ### 1.1.2
 
 * add package keywords - **[@saumitrab](https://github.com/saumitrab)** [#4](https://github.com/groupon/swagql/pull/4)
