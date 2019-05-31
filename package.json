@@ -15,7 +15,6 @@
   },
   "scripts": {
     "pretest": "eslint lib test",
-    "preinstall": "fgrep -ql package-lock.json .gitignore || npm -v | egrep -q '^6\\.'",
     "test": "mocha",
     "posttest": "nlm verify"
   },
