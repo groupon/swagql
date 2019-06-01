@@ -5,7 +5,7 @@
 Build a GraphQL schema from a given Swagger or Open API specification.
 
 ```bash
-cat swagger.yml | swagql [-p <babel-plugin1-path>,<babel-plugin2-path>] > schema.js
+cat swagger.yml | swagql [-p <babel-plugin1-path>,<babel-plugin2-path>] [-n NamePrefix_]> schema.js
 ```
 
 Input swagger schema can be in YAML or JSON format. The generated schema exports
@@ -17,6 +17,11 @@ the authorization status for given request and swagger auth config. If a given
 request does not satisfy the required auth status, you can throw an auth error
 from this function. `requestContext` can be used to hold the information about
 the current request, such as the request object itself.
+
+In the case where you are merging multiple schemas, you may wish to have all
+of the methods and types be unique, and can pass the `--name-prefix` (or `-n`)
+flag to prepend the given string to all of the above.
+
 ```js
 const { schema, FETCH, VERIFY_AUTH_STATUS } = require(pathToSchema);
 
