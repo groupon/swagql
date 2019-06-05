@@ -1,3 +1,9 @@
+### 1.2.0
+
+* --name-prefix flag - **[@dbushong](https://github.com/dbushong)** [#8](https://github.com/groupon/swagql/pull/8)
+  - [`966d91a`](https://github.com/groupon/swagql/commit/966d91a90e2b16df9f3847f7ace8c94b66c62a04) **feat:** --name-prefix flag
+
+
 ### 1.1.4
 
 * chore: remove silly preinstall check - **[@dbushong](https://github.com/dbushong)** [#7](https://github.com/groupon/swagql/pull/7)
