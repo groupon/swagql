@@ -43,9 +43,13 @@
   ],
   "paths": {
     "/pet": {
-      "bogus": {
-        "description": "a random invalid method"
-      },
+      "parameters": [
+        {
+          "in": "query",
+          "name": "debug",
+          "type": "string"
+        }
+      ],
       "post": {
         "tags": [
           "pet"

@@ -33,6 +33,22 @@ describe('SwagQL', () => {
       path.join(__dirname, '..', 'fixtures', 'require-os-plugin.js'),
     ]);
 
+    assert.truthy(
+      'updatePet result includes parameter from path',
+      gqlResult.ast.program.body
+        .find(
+          n =>
+            n.type === 'VariableDeclaration' &&
+            n.declarations[0].id.name === 'Mutation'
+        )
+        .declarations[0].init.arguments[0].properties.find(
+          p => p.key.name === 'fields'
+        )
+        .value.properties.find(p => p.key.name === 'updatePet')
+        .value.properties.find(p => p.key.name === 'args')
+        .value.properties.find(p => p.key.name === 'debug')
+    );
+
     // assert that the swagqlType is present and has the apiType object
     for (const p of gqlResult.ast.program.body) {
       if (!p.swagqlType) continue;
