@@ -43,6 +43,9 @@
   ],
   "paths": {
     "/pet": {
+      "bogus": {
+        "description": "a random invalid method"
+      },
       "post": {
         "tags": [
           "pet"
