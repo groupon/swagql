@@ -1,3 +1,10 @@
+### 1.3.0
+
+* fix & support pathitem parameters - **[@dbushong](https://github.com/dbushong)** [#9](https://github.com/groupon/swagql/pull/9)
+  - [`b3b8a3e`](https://github.com/groupon/swagql/commit/b3b8a3ed7b1c0bed1f2359707269e174c20ed983) **fix:** ignore non-method pathitem entries
+  - [`31e7ce1`](https://github.com/groupon/swagql/commit/31e7ce17ce3548591fe69ba05fa9fec51a5bbed8) **feat:** add support for pathitem-level params - see: [v3](http://spec.openapis.org/oas/v3)
+
+
 ### 1.2.0
 
 * --name-prefix flag - **[@dbushong](https://github.com/dbushong)** [#8](https://github.com/groupon/swagql/pull/8)
