@@ -43,6 +43,13 @@
   ],
   "paths": {
     "/pet": {
+      "parameters": [
+        {
+          "in": "query",
+          "name": "debug",
+          "type": "string"
+        }
+      ],
       "post": {
         "tags": [
           "pet"
