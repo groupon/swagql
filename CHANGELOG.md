@@ -1,3 +1,9 @@
+### 1.3.1
+
+* chore(deps): bump lodash from 4.17.11 to 4.17.13 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#11](https://github.com/groupon/swagql/pull/11)
+  - [`d531c20`](https://github.com/groupon/swagql/commit/d531c20c4bc4819cdffbe76d8ab901101b878f84) **chore:** bump lodash from 4.17.11 to 4.17.13 - see: [4](- [Commits](https://github.com/lodash/lodash/compare/4)
+
+
 ### 1.3.0
 
 * fix & support pathitem parameters - **[@dbushong](https://github.com/dbushong)** [#9](https://github.com/groupon/swagql/pull/9)
