@@ -28,6 +28,16 @@ const EMPTY_OBJ = {
   type: 'object',
 };
 
+const BAD_NAMES_OBJ = {
+  type: 'object',
+  properties: {
+    1: { type: 'number' },
+    'bad-name': { type: 'string' },
+    'Bad?Name': { type: 'string' },
+    'Bad Name': { type: 'string' },
+  },
+};
+
 describe('TypeMap', () => {
   it('can manage type defintions', () => {
     const builtIn = new BuiltInTypes();
@@ -137,6 +147,38 @@ const Recursive = new GraphQLObjectType({
     return value;
   }
 
+});`,
+      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+    );
+  });
+
+  it('handles objects with invalid property key names', () => {
+    const builtIn = new BuiltInTypes();
+    const typeMap = new TypeMap(builtIn);
+    typeMap.addSwaggerDefinition(BAD_NAMES_OBJ, 'BadNames');
+    t.assertIdentifier(typeMap.ref(BAD_NAMES_OBJ), { name: 'BadNames' });
+
+    assert.equal(
+      `const BadNames = new GraphQLObjectType({
+  name: 'BadNames',
+  fields: () => ({
+    _1: {
+      type: GraphQLString,
+      resolve: obj => obj['1']
+    },
+    badName: {
+      type: GraphQLString,
+      resolve: obj => obj['bad-name']
+    },
+    badName2: {
+      type: GraphQLString,
+      resolve: obj => obj['Bad?Name']
+    },
+    badName3: {
+      type: GraphQLString,
+      resolve: obj => obj['Bad Name']
+    }
+  })
 });`,
       generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
     );
