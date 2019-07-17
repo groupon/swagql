@@ -986,8 +986,11 @@
           "type": "string",
           "example": "doggie"
         },
-        "nick-name": {
-          "type": "string"
+        "is-nick-name": {
+          "type": "boolean"
+        },
+        "age-in-dog-years": {
+          "type": "integer"
         },
         "5 Things are Neato!": {
           "type": "string"

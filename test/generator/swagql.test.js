@@ -12,8 +12,7 @@ const http = require('http');
 const generateSchema = require('../../lib/generate-schema');
 
 describe('SwagQL', () => {
-  const port = 4000;
-  let server;
+  let server, port;
 
   before(async () => {
     server = http.createServer((req, res) => {
@@ -22,13 +21,18 @@ describe('SwagQL', () => {
           JSON.stringify({
             id: 1,
             name: 'MaxTheDog',
-            'nick-name': 'Honey Bear',
-            '5 Things are Neato!': 'It worked!',
+            'is-nick-name': true,
+            'age-in-dog-years': 49,
+            '5 Things are Neato!': 'It works!',
           })
         );
       }
     });
-    await server.listen(port);
+    port = await new Promise(resolve => {
+      server.listen(0, () => {
+        resolve(server.address().port);
+      });
+    });
   });
 
   after(() => server.close());
@@ -90,7 +94,8 @@ describe('SwagQL', () => {
           petById(petId: $petId) {
             id
             name
-            nickName
+            isNickName
+            ageInDogYears
             _5ThingsAreNeato
           }
         }
@@ -112,7 +117,10 @@ describe('SwagQL', () => {
     assert.equal(1, result.data.petById.id);
 
     assert.notEqual(null, result.data.myPlaces);
-    assert.equal('Honey Bear', result.data.petById.nickName);
-    assert.equal('It worked!', result.data.petById._5ThingsAreNeato);
+
+    assert.equal(true, result.data.petById.isNickName);
+    assert.equal(49, result.data.petById.ageInDogYears);
+    // eslint-disable-next-line no-underscore-dangle
+    assert.equal('It works!', result.data.petById._5ThingsAreNeato);
   });
 });

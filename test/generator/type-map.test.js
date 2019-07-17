@@ -32,7 +32,7 @@ const BAD_NAMES_OBJ = {
   type: 'object',
   properties: {
     1: { type: 'number' },
-    'bad-name': { type: 'string' },
+    'bad-name': { type: 'boolean' },
     'Bad?Name': { type: 'string' },
     'Bad Name': { type: 'string' },
     '5 Things are Neato!': { type: 'string' },
@@ -164,11 +164,11 @@ const Recursive = new GraphQLObjectType({
   name: 'BadNames',
   fields: () => ({
     _1: {
-      type: GraphQLString,
+      type: GraphQLFloat,
       resolve: obj => obj['1']
     },
     badName: {
-      type: GraphQLString,
+      type: GraphQLBoolean,
       resolve: obj => obj['bad-name']
     },
     badName2: {
