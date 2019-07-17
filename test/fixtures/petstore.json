@@ -986,6 +986,12 @@
           "type": "string",
           "example": "doggie"
         },
+        "nick-name": {
+          "type": "string"
+        },
+        "5 Things are Neato!": {
+          "type": "string"
+        },
         "photoUrls": {
           "type": "array",
           "xml": {

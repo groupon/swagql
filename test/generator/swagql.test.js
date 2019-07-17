@@ -12,14 +12,23 @@ const http = require('http');
 const generateSchema = require('../../lib/generate-schema');
 
 describe('SwagQL', () => {
+  const port = 4000;
   let server;
+
   before(async () => {
     server = http.createServer((req, res) => {
       if (req.url === '/v2/pet/1') {
-        res.end(JSON.stringify({ id: 1, name: 'MaxTheDog' }));
+        res.end(
+          JSON.stringify({
+            id: 1,
+            name: 'MaxTheDog',
+            'nick-name': 'Honey Bear',
+            '5 Things are Neato!': 'It worked!',
+          })
+        );
       }
     });
-    await server.listen(8080);
+    await server.listen(port);
   });
 
   after(() => server.close());
@@ -79,15 +88,17 @@ describe('SwagQL', () => {
       `
         query MyQuery($petId: Int!) {
           petById(petId: $petId) {
-            name
             id
+            name
+            nickName
+            _5ThingsAreNeato
           }
         }
       `,
       null,
       {
         [gqlSchemaModule.exports.FETCH](urlPath, options) {
-          return fetch(`http://localhost:8080/v2${urlPath}`, options);
+          return fetch(`http://localhost:${port}/v2${urlPath}`, options);
         },
         [gqlSchemaModule.exports.VERIFY_AUTH_STATUS]() {},
       },
@@ -101,5 +112,7 @@ describe('SwagQL', () => {
     assert.equal(1, result.data.petById.id);
 
     assert.notEqual(null, result.data.myPlaces);
+    assert.equal('Honey Bear', result.data.petById.nickName);
+    assert.equal('It worked!', result.data.petById._5ThingsAreNeato);
   });
 });

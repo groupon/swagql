@@ -35,6 +35,7 @@ const BAD_NAMES_OBJ = {
     'bad-name': { type: 'string' },
     'Bad?Name': { type: 'string' },
     'Bad Name': { type: 'string' },
+    '5 Things are Neato!': { type: 'string' },
   },
 };
 
@@ -152,7 +153,7 @@ const Recursive = new GraphQLObjectType({
     );
   });
 
-  it('handles objects with invalid property key names', () => {
+  it('handles objects with invalid property names', () => {
     const builtIn = new BuiltInTypes();
     const typeMap = new TypeMap(builtIn);
     typeMap.addSwaggerDefinition(BAD_NAMES_OBJ, 'BadNames');
@@ -177,6 +178,10 @@ const Recursive = new GraphQLObjectType({
     badName3: {
       type: GraphQLString,
       resolve: obj => obj['Bad Name']
+    },
+    _5ThingsAreNeato: {
+      type: GraphQLString,
+      resolve: obj => obj['5 Things are Neato!']
     }
   })
 });`,
