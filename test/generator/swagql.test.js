@@ -24,6 +24,11 @@ describe('SwagQL', () => {
             'is-nick-name': true,
             'age-in-dog-years': 49,
             '5 Things are Neato!': 'It works!',
+            safe: {
+              alsoSafe: {
+                'Totally Not Safe!': { '4': 'Nested objects work too!' },
+              },
+            },
           })
         );
       }
@@ -97,6 +102,13 @@ describe('SwagQL', () => {
             isNickName
             ageInDogYears
             _5ThingsAreNeato
+            safe {
+              alsoSafe {
+                totallyNotSafe {
+                  _4
+                }
+              }
+            }
           }
         }
       `,
@@ -122,5 +134,10 @@ describe('SwagQL', () => {
     assert.equal(49, result.data.petById.ageInDogYears);
     // eslint-disable-next-line no-underscore-dangle
     assert.equal('It works!', result.data.petById._5ThingsAreNeato);
+    assert.equal(
+      'Nested objects work too!',
+      // eslint-disable-next-line no-underscore-dangle
+      result.data.petById.safe.alsoSafe.totallyNotSafe._4
+    );
   });
 });
