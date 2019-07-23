@@ -40,7 +40,7 @@ const BAD_NAMES_OBJ = {
 };
 
 describe('TypeMap', () => {
-  it('can manage type defintions', () => {
+  it('can manage type definitions', () => {
     const builtIn = new BuiltInTypes();
     const typeMap = new TypeMap(builtIn);
     typeMap.addSwaggerDefinition(SIMPLE_OBJ, 'My.Type/#bar');
