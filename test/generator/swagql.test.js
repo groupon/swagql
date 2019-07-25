@@ -168,10 +168,16 @@ describe('SwagQL', () => {
           photoUrls: '/photo.png',
           ageInDogYears: 5,
           isNickName: false,
+          safe: {
+            alsoSafe: {
+              totallyNotSafe: {
+                _4: 'nested objects work!',
+              },
+            },
+          },
         },
       }
     );
-    assert.notEqual(null, mutation);
     assert.equal('Fido', mutation.data.addPet.rawInputOptions.body.name);
     assert.equal(
       5,
@@ -180,6 +186,12 @@ describe('SwagQL', () => {
     assert.equal(
       false,
       mutation.data.addPet.rawInputOptions.body['is-nick-name']
+    );
+    assert.equal(
+      'nested objects work!',
+      mutation.data.addPet.rawInputOptions.body.safe.alsoSafe[
+        'Totally Not Safe!'
+      ]['4']
     );
   });
 });
