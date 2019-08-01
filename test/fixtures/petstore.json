@@ -986,6 +986,33 @@
           "type": "string",
           "example": "doggie"
         },
+        "is-nick-name": {
+          "type": "boolean"
+        },
+        "age-in-dog-years": {
+          "type": "integer"
+        },
+        "5 Things are Neato!": {
+          "type": "string"
+        },
+        "safe": {
+          "type": "object",
+          "properties": {
+            "alsoSafe": {
+              "type": "object",
+              "properties": {
+                "Totally Not Safe!": {
+                  "type": "object",
+                  "properties": {
+                    "4": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "photoUrls": {
           "type": "array",
           "xml": {

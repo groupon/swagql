@@ -12,14 +12,38 @@ const http = require('http');
 const generateSchema = require('../../lib/generate-schema');
 
 describe('SwagQL', () => {
-  let server;
+  let server, port;
+
   before(async () => {
     server = http.createServer((req, res) => {
       if (req.url === '/v2/pet/1') {
-        res.end(JSON.stringify({ id: 1, name: 'MaxTheDog' }));
+        res.end(
+          JSON.stringify({
+            id: 1,
+            name: 'MaxTheDog',
+            'is-nick-name': true,
+            'age-in-dog-years': 49,
+            '5 Things are Neato!': 'It works!',
+            safe: {
+              alsoSafe: {
+                'Totally Not Safe!': { '4': 'Nested objects work too!' },
+              },
+            },
+          })
+        );
+      } else if (req.url === '/v2/pet') {
+        res.end(
+          JSON.stringify({
+            id: 2,
+          })
+        );
       }
     });
-    await server.listen(8080);
+    port = await new Promise(resolve => {
+      server.listen(0, () => {
+        resolve(server.address().port);
+      });
+    });
   });
 
   after(() => server.close());
@@ -79,15 +103,25 @@ describe('SwagQL', () => {
       `
         query MyQuery($petId: Int!) {
           petById(petId: $petId) {
-            name
             id
+            name
+            isNickName
+            ageInDogYears
+            _5ThingsAreNeato
+            safe {
+              alsoSafe {
+                totallyNotSafe {
+                  _4
+                }
+              }
+            }
           }
         }
       `,
       null,
       {
         [gqlSchemaModule.exports.FETCH](urlPath, options) {
-          return fetch(`http://localhost:8080/v2${urlPath}`, options);
+          return fetch(`http://localhost:${port}/v2${urlPath}`, options);
         },
         [gqlSchemaModule.exports.VERIFY_AUTH_STATUS]() {},
       },
@@ -101,5 +135,63 @@ describe('SwagQL', () => {
     assert.equal(1, result.data.petById.id);
 
     assert.notEqual(null, result.data.myPlaces);
+
+    assert.equal(true, result.data.petById.isNickName);
+    assert.equal(49, result.data.petById.ageInDogYears);
+    // eslint-disable-next-line no-underscore-dangle
+    assert.equal('It works!', result.data.petById._5ThingsAreNeato);
+    assert.equal(
+      'Nested objects work too!',
+      // eslint-disable-next-line no-underscore-dangle
+      result.data.petById.safe.alsoSafe.totallyNotSafe._4
+    );
+
+    const mutation = await graphql(
+      gqlSchemaModule.exports.schema,
+      `
+        mutation AddPet($body: PetInput!) {
+          addPet(body: $body) {
+            rawInputOptions
+          }
+        }
+      `,
+      null,
+      {
+        [gqlSchemaModule.exports.FETCH](urlPath, options) {
+          return fetch(`http://localhost:${port}/v2${urlPath}`, options);
+        },
+        [gqlSchemaModule.exports.VERIFY_AUTH_STATUS]() {},
+      },
+      {
+        body: {
+          name: 'Fido',
+          photoUrls: '/photo.png',
+          ageInDogYears: 5,
+          isNickName: false,
+          safe: {
+            alsoSafe: {
+              totallyNotSafe: {
+                _4: 'nested objects work!',
+              },
+            },
+          },
+        },
+      }
+    );
+    assert.equal('Fido', mutation.data.addPet.rawInputOptions.body.name);
+    assert.equal(
+      5,
+      mutation.data.addPet.rawInputOptions.body['age-in-dog-years']
+    );
+    assert.equal(
+      false,
+      mutation.data.addPet.rawInputOptions.body['is-nick-name']
+    );
+    assert.equal(
+      'nested objects work!',
+      mutation.data.addPet.rawInputOptions.body.safe.alsoSafe[
+        'Totally Not Safe!'
+      ]['4']
+    );
   });
 });
