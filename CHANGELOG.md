@@ -1,3 +1,15 @@
+### 1.3.2
+
+* handle invalid key names - **[@erothman-groupon](https://github.com/erothman-groupon)** [#10](https://github.com/groupon/swagql/pull/10)
+  - [`93401e5`](https://github.com/groupon/swagql/commit/93401e53c6f70a7dc41237d77eb4cc8515ad6e78) **fix:** handle invalid key names
+  - [`0c4752e`](https://github.com/groupon/swagql/commit/0c4752ef76613b9360b1f26c1b2a4810159a0e7b) **fix:** replace array with a set and update makeValidName
+  - [`51a6511`](https://github.com/groupon/swagql/commit/51a6511a33b00001308c1a31f45ed6fc5b75c357) **fix:** do not add resolver to input types
+  - [`064b821`](https://github.com/groupon/swagql/commit/064b8218c0b5899dc7d30b74eaf433af7b260e60) **fix:** do not assume type is always a string
+  - [`95b0def`](https://github.com/groupon/swagql/commit/95b0def8b0e655a690c7b6838b99643734b55468) **fix:** add test for nested objects
+  - [`88e1e4f`](https://github.com/groupon/swagql/commit/88e1e4f01ffbe2153fa4f5f319eec772ae16e90e) **fix:** create map fields resolve function for posts & puts
+  - [`e223653`](https://github.com/groupon/swagql/commit/e223653a632554dec6b170acb0de8d1dbab0d6df) **fix:** handle nested objects in post/put resolver function
+
+
 ### 1.3.1
 
 * chore(deps): bump lodash from 4.17.11 to 4.17.13 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#11](https://github.com/groupon/swagql/pull/11)
