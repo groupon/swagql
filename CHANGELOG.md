@@ -1,3 +1,9 @@
+### 1.3.3
+
+* don't die on Query or Mutation without fields - **[@dbushong](https://github.com/dbushong)** [#15](https://github.com/groupon/swagql/pull/15)
+  - [`e4c466f`](https://github.com/groupon/swagql/commit/e4c466f59cac15835fdddacdcc02bbee3857cb17) **fix:** don't die on Query or Mutation w/out fields
+
+
 ### 1.3.2
 
 * handle invalid key names - **[@erothman-groupon](https://github.com/erothman-groupon)** [#10](https://github.com/groupon/swagql/pull/10)
