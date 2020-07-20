@@ -1,3 +1,9 @@
+### 1.3.4
+
+* chore(deps): bump lodash from 4.17.13 to 4.17.19 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#17](https://github.com/groupon/swagql/pull/17)
+  - [`3d90f24`](https://github.com/groupon/swagql/commit/3d90f24aa3a1177025e8346ad9b1b9a07906f8a0) **chore:** bump lodash from 4.17.13 to 4.17.19 - see: [4](- [Commits](https://github.com/lodash/lodash/compare/4)
+
+
 ### 1.3.3
 
 * don't die on Query or Mutation without fields - **[@dbushong](https://github.com/dbushong)** [#15](https://github.com/groupon/swagql/pull/15)
