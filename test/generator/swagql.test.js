@@ -26,7 +26,7 @@ describe('SwagQL', () => {
             '5 Things are Neato!': 'It works!',
             safe: {
               alsoSafe: {
-                'Totally Not Safe!': { '4': 'Nested objects work too!' },
+                'Totally Not Safe!': { 4: 'Nested objects work too!' },
               },
             },
           })
