@@ -4,8 +4,15 @@
 
 Build a GraphQL schema from a given Swagger or Open API specification.
 
+## Install
+To install swagql as devDependency run:
 ```bash
-cat swagger.yml | swagql [-p <babel-plugin1-path>,<babel-plugin2-path>] [-n NamePrefix_]> schema.js
+npm i -D swagql
+```
+
+## Usage
+```bash
+cat swagger.yml | npx swagql [-p <babel-plugin1-path>,<babel-plugin2-path>] [-n NamePrefix_]> schema.js
 ```
 
 Input swagger schema can be in YAML or JSON format. The generated schema exports
@@ -40,7 +47,7 @@ Use schema and context in your app
 const { graphql } = require('graphql');
 
 graphql(schema, query, context)
-  .then(result => console.log);
+  .then(result => console.log(result));
 ```
 
 ## Pagination
