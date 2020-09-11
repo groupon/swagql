@@ -94,7 +94,7 @@ fix(search): Handle multi-byte characters in search logic
 ### Reporting Issues
 
 If you find any mistakes in the docs or a bug in the code,
-please [open an issue in Github](https://github.com/groupon/nlm/issues/new) so we can look into it.
+please [open an issue in Github](https://github.com/groupon/swagql/issues/new) so we can look into it.
 You can also [create a PR](#contributing-code) fixing it yourself, or course.
 
 If you report a bug, please follow these guidelines:
