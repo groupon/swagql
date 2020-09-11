@@ -1,8 +1,8 @@
 'use strict';
 
 const assert = require('assertive');
-const t = require('babel-types');
-const generate = require('babel-generator').default;
+const t = require('@babel/types');
+const generate = require('@babel/generator').default;
 
 const BuiltInTypes = require('../../lib/generator/built-in');
 const TypeMap = require('../../lib/generator/type-map');
@@ -86,7 +86,9 @@ const Recursive = new GraphQLObjectType({
     }
   })
 });`,
-      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+      generate(t.program(typeMap.astNodes), {
+        jsescOption: { quotes: 'single' },
+      }).code
     );
   });
 
@@ -111,7 +113,9 @@ const Recursive = new GraphQLObjectType({
     }
   })
 });`,
-      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+      generate(t.program(typeMap.astNodes), {
+        jsescOption: { quotes: 'single' },
+      }).code
     );
   });
 
@@ -130,7 +134,9 @@ const Recursive = new GraphQLObjectType({
   }
 
 });`,
-      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+      generate(t.program(typeMap.astNodes), {
+        jsescOption: { quotes: 'single' },
+      }).code
     );
   });
 
@@ -149,7 +155,9 @@ const Recursive = new GraphQLObjectType({
   }
 
 });`,
-      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+      generate(t.program(typeMap.astNodes), {
+        jsescOption: { quotes: 'single' },
+      }).code
     );
   });
 
@@ -185,7 +193,9 @@ const Recursive = new GraphQLObjectType({
     }
   })
 });`,
-      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+      generate(t.program(typeMap.astNodes), {
+        jsescOption: { quotes: 'single' },
+      }).code
     );
   });
 
@@ -204,8 +214,8 @@ const Recursive = new GraphQLObjectType({
         list: scalarListType,
       },
     };
-    const wrapRef = typeMap.ref(wrapObject);
-    t.identifier(wrapRef);
+
+    t.assertIdentifier(typeMap.ref(wrapObject), { name: 'UnknownType1' });
 
     // The order here is important: We absolutely need to put the scalar first
     // so it can be referenced in the list type.
@@ -227,7 +237,9 @@ const UnknownType1 = new GraphQLObjectType({
     }
   })
 });`,
-      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+      generate(t.program(typeMap.astNodes), {
+        jsescOption: { quotes: 'single' },
+      }).code
     );
   });
 
@@ -252,7 +264,9 @@ const UnknownType1 = new GraphQLObjectType({
     }
   })
 });`,
-      generate(t.program(typeMap.astNodes), { quotes: 'single' }).code
+      generate(t.program(typeMap.astNodes), {
+        jsescOption: { quotes: 'single' },
+      }).code
     );
   });
 });

@@ -1,8 +1,8 @@
 'use strict';
 
 const assert = require('assertive');
-const t = require('babel-types');
-const generate = require('babel-generator').default;
+const t = require('@babel/types');
+const generate = require('@babel/generator').default;
 
 const BuiltInTypes = require('../../lib/generator/built-in');
 const Connectionator = require('../../lib/generator/connectionator');
@@ -93,7 +93,9 @@ const AEdge = new GraphQLObjectType({
   })
 });`,
       generate(t.program([].concat(AConnectionAST, AEdgeAST)), {
-        quotes: 'single',
+        jsescOption: {
+          quotes: 'single',
+        },
       }).code
     );
 
@@ -121,7 +123,9 @@ const BConnection = new GraphQLObjectType({
   })
 });`,
       generate(t.program([].concat(BConnectionAST)), {
-        quotes: 'single',
+        jsescOption: {
+          quotes: 'single',
+        },
       }).code
     );
   });
