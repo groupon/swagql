@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function({ types: t }) {
+module.exports = function ({ types: t }) {
   return {
     name: 'req-os',
     visitor: {

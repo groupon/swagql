@@ -1,9 +1,8 @@
 'use strict';
 
 const assert = require('assertive');
-const t = require('babel-types');
-const generate = require('babel-generator').default;
-const identity = require('lodash/identity');
+const t = require('@babel/types');
+const generate = require('@babel/generator').default;
 
 const BuiltInTypes = require('../../lib/generator/built-in');
 const TypeMap = require('../../lib/generator/type-map');
@@ -11,14 +10,16 @@ const Connectionator = require('../../lib/generator/connectionator');
 
 const deoperationalize = require('../../lib/generator/deoperationalize');
 
-function opToCode(op, extract = identity) {
+function opToCode(op, extract = x => x) {
   const builtIn = new BuiltInTypes();
   const output = new TypeMap(builtIn, false);
   const input = new TypeMap(builtIn, true);
   const connections = new Connectionator(output);
   const property = deoperationalize(op, input, output, connections);
   t.assertObjectProperty(property);
-  return generate(extract(property, { output }), { quotes: 'single' }).code;
+  return generate(extract(property, { output }), {
+    jsescOption: { quotes: 'single' },
+  }).code;
 }
 
 describe('deoperationalize', () => {
@@ -165,7 +166,8 @@ const ${responseTypeName} = new GraphQLObjectType({
     }
   })
 });`,
-            generate(responseType.ast, { quotes: 'single' }).code
+            generate(responseType.ast, { jsescOption: { quotes: 'single' } })
+              .code
           );
           return node;
         }

@@ -1,13 +1,12 @@
 language: node_js
 node_js:
-  - 8
   - 10
+  - 12
+  - 14
 deploy:
   - provider: script
-    script: ./node_modules/.bin/nlm release
-    skip_cleanup: true
+    script: npx nlm release
+    cleanup: false
     'on':
       branch: master
-      node: 10
-before_install:
-  - npm i -g npm@^6
+      node: 14

@@ -1,13 +1,13 @@
 'use strict';
 
 const assert = require('assertive');
-const generate = require('babel-generator').default;
-const t = require('babel-types');
+const generate = require('@babel/generator').default;
+const t = require('@babel/types');
 
 const BuiltInTypes = require('../../lib/generator/built-in');
 
 function render(builtIn) {
-  return generate(builtIn.ast, { quotes: 'single' }).code;
+  return generate(builtIn.ast, { jsescOption: { quotes: 'single' } }).code;
 }
 
 describe('BuiltInTypes', () => {
