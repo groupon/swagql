@@ -1,3 +1,17 @@
+### 1.3.5 - 2020-09-12
+
+* refactor: upgrade to babel 7 & drop node 8 support - **[@aaarichter](https://github.com/aaarichter)** [#18](https://github.com/groupon/swagql/pull/18)
+  - [`12a21ef`](https://github.com/groupon/swagql/commit/12a21ef7924c863404c340382601eaf1bbca6094) ♻️ **chore:** update devDependencies
+  - [`ad8cbff`](https://github.com/groupon/swagql/commit/ad8cbff959d09b42de8c05dfeb250c669970ff47) ♻️ **chore:** upgrade swagger-parser
+  - [`1c18355`](https://github.com/groupon/swagql/commit/1c183551680e7cf80d5c09fa4e9ea2fc50d5376c) ♻️ **chore:** upgrade commander
+  - [`b28382e`](https://github.com/groupon/swagql/commit/b28382e154ad57e9d6bca762b4136fe5e3531c4e) 📦️ **refactor:** upgrade to babel 7
+  - [`0e5020d`](https://github.com/groupon/swagql/commit/0e5020d94c2a486be66eeb99a8796ae59ed5ea23) 💚 **ci:** update travis to use node 10 - 14
+  - [`42cca4f`](https://github.com/groupon/swagql/commit/42cca4f88f7317d4405bb40bd490201890d43d41) 🐛 **fix:** npm audit
+  - [`365db23`](https://github.com/groupon/swagql/commit/365db230b6b79e1d3339d51c96fc41fa890c81a7) 📝 **docs:** update README and CONTRIBUTING
+  - [`d38fad9`](https://github.com/groupon/swagql/commit/d38fad900f0a3f47f5c9f85e01b141277f3c960f) 💚 **ci:** update eslint config files
+  - [`8c4d405`](https://github.com/groupon/swagql/commit/8c4d405d52237c292db1c5b226657e63d9724433) 🐛 **fix:** address feedback
+
+
 ### 1.3.4
 
 * chore(deps): bump lodash from 4.17.13 to 4.17.19 - **[@dependabot[bot]](https://github.com/apps/dependabot)** [#17](https://github.com/groupon/swagql/pull/17)
