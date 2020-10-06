@@ -1,3 +1,11 @@
+### 1.3.6 - 2020-10-06
+
+* Small fixes - **[@aaarichter](https://github.com/aaarichter)** [#20](https://github.com/groupon/swagql/pull/20)
+  - [`068cfd6`](https://github.com/groupon/swagql/commit/068cfd6f85f9b854a529e684fc70926d8b6b415f) 🐛 **fix:** avoid duplicate args
+  - [`bc49e43`](https://github.com/groupon/swagql/commit/bc49e433a282c5ceae272d5dd6ece5f7e611847f) 🐛 **fix:** partial revert PR #15 - see: [#15](https://github.com/groupon/swagql/issues/15)
+  - [`8ecd5c2`](https://github.com/groupon/swagql/commit/8ecd5c21a1617af049543563e3e4678a2e9728a2) ♻️ **chore:** update dependencies
+
+
 ### 1.3.5 - 2020-09-12
 
 * refactor: upgrade to babel 7 & drop node 8 support - **[@aaarichter](https://github.com/aaarichter)** [#18](https://github.com/groupon/swagql/pull/18)
