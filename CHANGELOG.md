@@ -1,3 +1,10 @@
+### v1.3.7 (2021-02-17)
+
+#### 🔼 Dependencies
+
+* [#21](https://github.com/groupon/swagql/pull/21) chore(deps): bump ini from 1.3.5 to 1.3.7 ([@dependabot[bot]](https://github.com/apps/dependabot)) 
+
+
 ### 1.3.6 - 2020-10-06
 
 * Small fixes - **[@aaarichter](https://github.com/aaarichter)** [#20](https://github.com/groupon/swagql/pull/20)
