@@ -19,7 +19,6 @@
     "posttest": "nlm verify"
   },
   "engines": {
-    "yarn": "0.0.0",
     "node": ">=10"
   },
   "mocha": {
