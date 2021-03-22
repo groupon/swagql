@@ -1,3 +1,10 @@
+### v1.3.8 (2021-03-22)
+
+#### 🐛 Bug Fixes
+
+* [#23](https://github.com/groupon/swagql/pull/23) fix: remove yarn blocker ([@aaarichter](https://github.com/aaarichter)) 
+
+
 ### v1.3.7 (2021-02-17)
 
 #### 🔼 Dependencies
