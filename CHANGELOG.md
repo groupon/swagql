@@ -1,3 +1,10 @@
+### v1.3.9 (2021-03-26)
+
+#### 🏡 Internal
+
+* [#24](https://github.com/groupon/swagql/pull/24) chore: update to main branch & update packages ([@aaarichter](https://github.com/aaarichter)) 
+
+
 ### v1.3.8 (2021-03-22)
 
 #### 🐛 Bug Fixes
