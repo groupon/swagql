@@ -1,3 +1,10 @@
+### v1.3.10 (2021-05-27)
+
+#### 🔼 Dependencies
+
+* [#26](https://github.com/groupon/swagql/pull/26) chore(deps): bump browserslist from 4.16.3 to 4.16.6 ([@dependabot[bot]](https://github.com/apps/dependabot)) 
+
+
 ### v1.3.9 (2021-03-26)
 
 #### 🏡 Internal

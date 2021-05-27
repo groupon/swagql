@@ -1,6 +1,6 @@
 {
   "name": "swagql",
-  "version": "1.3.9",
+  "version": "1.3.10",
   "description": "Build a GraphQL schema from a given Swagger or Open API specification",
   "license": "BSD-3-Clause",
   "main": "lib/swagql.js",
