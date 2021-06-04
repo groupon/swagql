@@ -1,6 +1,6 @@
 [![nlm-github](https://img.shields.io/badge/github-groupon%2Fswagql%2Fissues-F4D03F?logo=github&logoColor=white)](https://github.com/groupon/swagql/issues)
 ![nlm-node](https://img.shields.io/badge/node-%3E%3D10.13-blue?logo=node.js&logoColor=white)
-![nlm-version](https://img.shields.io/badge/version-1.3.10-blue?logo=version&logoColor=white)
+![nlm-version](https://img.shields.io/badge/version-1.3.11-blue?logo=version&logoColor=white)
 <div align="center">
 <img src="https://user-images.githubusercontent.com/433909/52972858-ff0e6d00-3370-11e9-9188-6b3672acec27.jpg" width="400" height="440">
 </div>

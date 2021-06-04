@@ -1,3 +1,10 @@
+### v1.3.11 (2021-06-04)
+<a id="v1.3.11"></a>
+#### 🏡 Internal
+
+* [#27](https://github.com/groupon/swagql/pull/27) ci(actions): add GitHub actions ([@aaarichter](https://github.com/aaarichter))
+
+
 ### v1.3.10 (2021-05-27)
 
 #### 🔼 Dependencies
