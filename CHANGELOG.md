@@ -1,3 +1,10 @@
+### v1.3.12 (2021-10-22)
+<a id="v1.3.12"></a>
+#### 🏡 Internal
+
+* [#29](https://github.com/groupon/swagql/pull/29) Revert safe-fields change ([@dbushong](https://github.com/dbushong))
+
+
 ### v1.3.11 (2021-06-04)
 <a id="v1.3.11"></a>
 #### 🏡 Internal
