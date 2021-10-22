@@ -10,7 +10,9 @@ const cliPath = path.join(__dirname, '..', 'cli.js');
 const petstorePath = path.join(__dirname, 'fixtures', 'petstore.json');
 
 describe('cli', () => {
-  it('accepts --name-prefix', async () => {
+  it('accepts --name-prefix', async function () {
+    this.timeout(10000);
+
     const { stdout: js } = await execAsync(
       `${cliPath} --name-prefix=FOO_ < ${petstorePath}`
     );
