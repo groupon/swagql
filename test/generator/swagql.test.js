@@ -63,12 +63,9 @@ describe('SwagQL', () => {
         .find(
           n =>
             n.type === 'VariableDeclaration' &&
-            n.declarations[0].id.name === 'Mutation'
+            n.declarations[0].id.name === 'mutationFields'
         )
-        .declarations[0].init.arguments[0].properties.find(
-          p => p.key.name === 'fields'
-        )
-        .value.properties.find(p => p.key.name === 'updatePet')
+        .declarations[0].init.properties.find(p => p.key.name === 'updatePet')
         .value.properties.find(p => p.key.name === 'args')
         .value.properties.find(p => p.key.name === 'debug')
     );
