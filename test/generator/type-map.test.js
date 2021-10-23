@@ -82,7 +82,7 @@ const Recursive = new GraphQLObjectType({
   name: 'Recursive',
   fields: () => ({
     children: {
-      type: new GraphQLList(Recursive)
+      type: new GraphQLList(GraphQLNonNull(Recursive))
     }
   })
 });`,
@@ -233,7 +233,7 @@ const UnknownType1 = new GraphQLObjectType({
   name: 'UnknownType1',
   fields: () => ({
     list: {
-      type: new GraphQLList(UnknownType2)
+      type: new GraphQLList(GraphQLNonNull(UnknownType2))
     }
   })
 });`,
