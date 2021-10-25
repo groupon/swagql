@@ -68,10 +68,10 @@ const AConnection = new GraphQLObjectType({
   name: 'AConnection',
   fields: () => ({
     nodes: {
-      type: new GraphQLList(A)
+      type: new GraphQLList(GraphQLNonNull(A))
     },
     edges: {
-      type: new GraphQLList(AEdge)
+      type: new GraphQLList(GraphQLNonNull(AEdge))
     },
     pageInfo: {
       type: GraphQLNonNull(PageInfo)
@@ -109,10 +109,10 @@ const BConnection = new GraphQLObjectType({
       type: GraphQLFloat
     },
     nodes: {
-      type: new GraphQLList(B)
+      type: new GraphQLList(GraphQLNonNull(B))
     },
     edges: {
-      type: new GraphQLList(BEdge)
+      type: new GraphQLList(GraphQLNonNull(BEdge))
     },
     pageInfo: {
       type: GraphQLNonNull(PageInfo)
