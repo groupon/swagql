@@ -1,3 +1,10 @@
+### v1.4.0 (2021-10-25)
+<a id="v1.4.0"></a>
+#### 🏡 Internal
+
+* [#30](https://github.com/groupon/swagql/pull/30) Support OpenAPI 3.0 ([@dbushong](https://github.com/dbushong))
+
+
 ### v1.3.12 (2021-10-22)
 <a id="v1.3.12"></a>
 #### 🏡 Internal
